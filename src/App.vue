@@ -1,19 +1,16 @@
 <template>
-  <NavBar :items="navItems" :active-item=1 />
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <NavBar :items="navItems"/>
+  <router-view/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
 import NavBar from "@/components/NavBar";
 import navItems from "@/constants/navItems";
 
 export default {
   name: 'App',
   components: {
-    NavBar,
-    HelloWorld,
+    NavBar
   },
   data() {
     return {
@@ -25,10 +22,14 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  color: #2c3e50;
+  margin: 20px 20px;
+  background-color: #b8f5e2;
+}
+
+nav a {
+  font-weight: bold;
   color: #2c3e50;
 }
+
 </style>

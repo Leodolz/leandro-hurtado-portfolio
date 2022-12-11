@@ -1,27 +1,28 @@
 <template>
   <header id="top"> <!-- I use top as id for the footer button to work as planned -->
     <nav> <!-- Consistent navigation at header -->
-      <ul>
-        <li v-for="item in items" :key="item.message" :class="{active: item.key === activeItem }">
-          <a :href="item.linkPage"> {{item.message}} </a>
-        </li>
-      </ul>
+      <router-link v-for="item in items" :to="item.linkPage" :key="item.message">
+        {{item.message}}
+      </router-link>
     </nav>
   </header>
 </template>
 
 <script>
+
 export default {
   name: "NavBar",
   props: {
-    items: Array,
-    activeItem: Number,
+    items: Array
   }
 }
 </script>
 
 <style scoped lang="css">
 
+body {
+  margin: 20px 20px;
+}
 
 /* This section below is for vertical navigation header */
 nav {
@@ -30,61 +31,55 @@ nav {
 }
 
 /*
-    For all the unlisted tag we disable the list type and we put each item to cover
-    the entire width of the screen
- */
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-
-/*
     For each <li> tag inside <nav> we add a unique style for vertical display and borders
 */
-nav li {
-  padding: 1.5% 2%;
+nav a {
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-style: solid;
   border-color: black;
   border-top: black;
   border-left-style: none;
   border-right-style: none;
-}
-
-
-nav li a {
   text-decoration: none;
   display: block;
   color: white;
   text-align: center;
-  width: 100%;
   font-size: 1.1em;
 }
 
 /* Class for painting different background color, for the active page in navbar */
-.active {
+.router-link-exact-active {
   background-color: yellowgreen;
 }
 
 /* Change the color of the text of the a tag inside .active to black */
-.active a {
+nav a.router-link-exact-active  {
   color: black;
 }
 
 @media (min-width: 800px) {
 
+  nav {
+    padding: 20px 0;
+  }
+
   /* The navigation bar here will be horizontal with other style */
-  nav li {
-    float: left;
+  nav a {
     display: inline;
     padding: 14px 16px;
     border-bottom-style: none;
     border-right-style: solid;
+    text-align: left;
+    width: fit-content;
+  }
+
+  nav a:first-child {
+    border-left-style: solid;
   }
 
   /* As these screens will likely be laptop and other devices with a mouse, we use hoover styling */
-  nav li:hover:not(.active) {
+  nav a:hover:not(.router-link-exact-active) {
     background-color: #2fbd2f;
   }
 
@@ -92,10 +87,6 @@ nav li a {
       These items in big screen sizes will have a left text align and a width where
       content fits
    */
-  nav li a {
-    text-align: left;
-    width: fit-content;
-  }
 }
 
 </style>
