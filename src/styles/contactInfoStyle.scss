@@ -1,0 +1,32 @@
+
+/* Relative width for mall icons */
+.small-icon {
+  width: 1em;
+}
+
+article {
+  margin-bottom: 1em;
+  float: left;
+}
+
+a:active, a:hover {
+  color: green;
+}
+
+a:link {
+  color: white;
+  text-decoration: none;
+}
+
+.contact-info {
+  padding-bottom: 1em;
+  display: flex;
+  clear: both;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-info strong {
+  font-style: oblique;
+}

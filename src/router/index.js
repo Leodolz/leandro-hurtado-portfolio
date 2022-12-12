@@ -4,6 +4,7 @@ import BackgroundView from "@/views/BackgroundView";
 import PersonalInfoView from "@/views/PersonalInfoView";
 import ContactMeView from "@/views/ContactMeView";
 import CommentsView from "@/views/CommentsView";
+import GalleryView from "@/views/GalleryView.vue";
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: '/comments',
     name: 'comments',
     component: CommentsView,
+  },
+  {
+    path: '/imageGallery',
+    name: 'imageGallery',
+    component: GalleryView,
   }
 ]
 

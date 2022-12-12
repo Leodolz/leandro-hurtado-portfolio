@@ -1,166 +1,88 @@
 <template>
+  <!-- Background container -->
   <div class="background">
-    <WorkHistoryTable  :work-history-items="workHistoryItems"/>
-    <EducationHistoryTable :academic-history-items="academicHistoryItems" />
+    <!-- Work history table component where we pass on the props of the work items and a boolean that they loaded -->
+    <WorkHistoryTable :work-history-items="workItems" :work-items-loaded="workItemsLoaded"/>
+    <!-- Education history table component where we pass the props of the education items and a flag to show that
+     they loaded -->
+    <EducationHistoryTable :academic-history-items="academicItems" :academic-items-loaded="academicItemsLoaded"/>
   </div>
+  <!-- Section containing the resume link -->
+  <section id="resume-link">
+    <!-- Resume link -->
+    <a href="https://cdn.glitch.global/2dde6655-7e97-4432-87fe-f1f52e07f800/LeandroHurtadoCVToDate.pdf">
+      Take a look at my resume in PDF
+    </a>
+  </section>
 </template>
 
 <script>
 // @ is an alias to /src
+
 import WorkHistoryTable from "@/components/WorkHistoryTable";
 import workHistoryItems from "@/constants/workHistoryItems";
 import EducationHistoryTable from "@/components/EducationHistoryTable";
 import academicHistoryItems from "@/constants/academicHistoryItems";
+import fetchHelper from "@/helpers/fetchHelper";
 
 export default {
+  // Name and components
   name: 'BackgroundView',
   components: {
     EducationHistoryTable,
     WorkHistoryTable
   },
+  // We declare the attributes we can access on this component
   data() {
     return {
-      workHistoryItems,
-      academicHistoryItems
+      workItems: [],
+      academicItems: [],
+      // By default, we have not loaded yet the arrays
+      academicItemsLoaded: false,
+      workItemsLoaded: false,
     }
   },
+  // Lifecycle event, if it is mounted, load the arrays needed
   async mounted() {
-    let academicRecords = await this.getHistoryItems();
-    if(academicRecords !== null && academicRecords.length > 0) {
-      this.academicHistoryItems = academicRecords;
+    // Get the academic history items using async method
+    let academicRecords = await this.getAcademicHistoryItems();
+    // If these records are indeed an array with size, save these in our state
+    if (academicRecords !== null && academicRecords.length > 0) {
+      this.academicItems = academicRecords;
+    }
+    // Get the work items using async method just as above
+    let workRecords = await this.getWorkItems();
+    // If these records are indeed an array with size, save these in our state
+    if (workRecords !== null && workRecords.length > 0) {
+      this.workItems = workRecords;
     }
   },
   methods: {
-    getHistoryItems: async () => {
-      const response = await fetch("https://leandro-hurtado-portfolio-api.glitch.me/academicRecords");
-      if(response.ok) {
-        return response.json();
-      }
-      return null;
+    // Method for loading the academic history items
+    getAcademicHistoryItems: async function () {
+      // Fetch items from academic records url and using academic history as label
+      let fetchedItems = await fetchHelper.getFetchedItems("/academicRecords", "academic history",
+          academicHistoryItems);
+      // Set that the process finished
+      this.academicItemsLoaded = true;
+      // Return the fetched items
+      return fetchedItems;
     },
+    getWorkItems: async function () {
+      // Fetch items from work records url and using work history label
+      let workItems = await fetchHelper.getFetchedItems("/workRecords", "work history",
+          workHistoryItems);
+      // Set that the process for loading work items finished
+      this.workItemsLoaded = true;
+      // Return the fetched items
+      return workItems;
+    }
   }
 }
 </script>
 
 <style>
-
-.background {
-  padding-bottom: 2em;
-  padding-left: 2em;
-}
-
-table {
-  font-family: "Century Gothic", CenturyGothic, sans-serif;
-  border-collapse: collapse;
-  margin-right: auto;
-  width: 95%;
-}
-
-
-tr {
-  background-color: #f1fff1;
-  border: 1px solid #000000;
-  display: block;
-  margin-bottom: 1em;
-}
-
-/* For mobile we don't display thead, we will modify this when we add @media */
-thead {
-  display: none;
-}
-
-/* Relative width defined for images in a table cell */
-td img {
-  width: 10em;
-}
-
-/* Nice formatting for a column header */
-th {
-  font-size: .85em;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-/* Common formatting for both elements th and td */
-th, td {
-  border-style: none;
-  border-color: black;
-  padding: 1.125em 0.625em;
-  text-align: center;
-  display: table-cell;
-}
-
-/* Format for table cells values */
-td {
-  border-bottom-color: #ddd;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  display: block;
-  font-size: .8em;
-  text-align: right;
-}
-
-/*
-    Synthetic pre-content for every td column to show the data-label attribute
-    for every td element, this is for a nice format in mobile devices and have
-    an easier table-like visualization in smaller screens
- */
-td::before {
-  content: attr(data-label);
-  float: left;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-/* For the last table data, we don't use border at the bottom */
-td:last-child {
-  border-bottom: 0;
-}
-
-.multiline-data-entry {
-  margin-top: 2em;
-}
-
-
-@media (min-width: 800px) {
-  /* Below we format tables for a behavior more appealing to laptops and computers */
-
-  /* Every table row should be displayed as default instead of mobile-like */
-  tr {
-    display: table-row;
-    margin-bottom: 0;
-  }
-
-  /* We now display table headers for this type of @media */
-  thead {
-    display: table-header-group;
-  }
-
-  /* We now use a border style for all th and td elements */
-  th, td {
-    border-style: solid;
-  }
-
-  /* For these kinds of data entry we don't put  */
-  .multiline-data-entry {
-    margin-top: 0;
-  }
-
-  /* For table columns we format different colors and sizes */
-  td {
-    border-bottom-color: #000;
-    display: table-cell;
-    font-size: medium;
-    text-align: center;
-  }
-
-  /*
-      As we are now visualizing as a normal table, we do not display the data-label attribute
-      for each column, as our table is more conventional for this @media
-   */
-  td::before {
-    display: none;
-  }
-}
+/* Import style from background style, as this is not scoped, we simply use normal css */
+@import "@/styles/backgroundStyle.css";
 
 </style>

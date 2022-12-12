@@ -38,40 +38,10 @@ export default {
   }
 }
 
-//TODO: Download Resume button
 </script>
 
-<style scoped>
-.contact-info strong {
-  font-style: oblique;
-}
+<style>
 
-/* Relative width for mall icons */
-.small-icon {
-  width: 1em;
-}
+@import "@/styles/personalStyle.css";
 
-/* For paragraph items inside this class, we want a specific font family */
-.card-front p {
-  font-family: "Comic Sans MS", sans-serif;
-}
-
-.card-front, .contact-info{
-  margin: 1em 1em;
-}
-
-.contact-info {
-  padding-bottom: 1em;
-}
-
-@media (min-width: 600px) {
-
-  /* The card front image should have a relative size and be at the left of some text */
-  .card-front img {
-    width: 12em;
-    float: left;
-    margin-right: 2em;
-    margin-bottom: 1em;
-  }
-}
 </style>

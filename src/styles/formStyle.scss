@@ -1,0 +1,94 @@
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+input, textarea, select {
+  display: flex;
+  background-color: #eee;
+  border: none;
+  padding: 12px;
+  margin-top: 8px;
+  clear: both;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+input, textarea {
+  box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+  outline: 1px solid teal;
+}
+
+button {
+  display: flex;
+  margin: 0 auto;
+  border-radius: 20px;
+  border: 1px solid #00b4cf;
+  background-color: #00b4cf;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+form p {
+  text-align: left;
+  justify-content: left;
+}
+
+textarea {
+  height: 100px;
+}
+
+
+/* Style the elements of class non displayed where we don't want them to be rendered */
+.non-displayed {
+  display: none;
+}
+
+/* Style elements that will be rendered when an error happened */
+.errorMessage {
+  /* Red color for this error message */
+  color: red;
+  /* Set the font family for a different one to highlight it is an error in validation */
+  font-family: Lucida Console, monospace;
+  /* Set the size of the error */
+  font-size: 12px;
+  /* Set the display type of the error message */
+  display: block;
+}
+
+/* For all paragraph elements that are contained in the errorMessage label, style their padding and margin */
+.errorMessage p {
+  padding: 0 2rem;
+  margin: 0 0;
+}
+
+.required-label::after {
+  content: "*";
+  color: red;
+}
+
+.submit-success {
+  padding: 10px 5px;
+  border: #2fbd2f solid;
+  background-color: lightgreen;
+  color: black;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  border-radius: 15px;
+  text-align: center;
+  justify-content: center;
+}

@@ -1,101 +1,47 @@
 <template>
+  <!-- Section for hobbies -->
   <section class="hobbies-interests">
+    <!-- Title for hobby group, we use prop passed on this component -->
     <h2>{{title}}</h2>
+    <!-- Description of this list -->
     <p>
       Below I talk about some of my favorite hobbies and passions I have in my personal life
     </p>
-    <ol>
+    <!-- Load list only if hobbies were loaded -->
+    <ol v-if="hobbiesLoaded">
+      <!-- Ordered list of hobbies given as props, we use v-for for having an li element for each in the array -->
       <li v-for="hobby in hobbies" :key="hobby.title">
+        <!-- Header of this hobby item -->
         <h3>{{hobby.title}}</h3>
+        <!-- Image of the hobby item -->
         <img
             :src="hobby.image.source"
             :alt="hobby.image.alt"
         />
+        <!-- paragraphs of this hobby item, there is one paragraph for every new line as we use split to turn
+         the single description into an array of lines -->
         <p v-for="hobbyParagraph in hobby.description.split('\n')" :key="hobbyParagraph.slice(0, 20)">
           {{hobbyParagraph}}
         </p>
       </li>
     </ol>
+    <!-- If hobbies were not loaded yet, please wait -->
+    <p v-else>Loading hobbies, please wait...</p>
   </section>
 </template>
 
 <script>
 export default {
+  // Component name and properties passed on by its parent
   name: "HobbiesListView",
   props: {
     title: String,
     hobbies: Array,
+    hobbiesLoaded: Boolean,
   }
 }
 </script>
 
-<style scoped>
-
-/*
-   For all li elements children of .hobbies-interests, we format this as well as
-   every element classified as multiline-data-entry have the same formatting style
- */
-.hobbies-interests li, .multiline-data-entry {
-  margin-top: 2em;
-}
-
-/* All images inside .hobbies-interests children have this format */
-.hobbies-interests img{
-  width: 15em;
-  height: 10em;
-  margin-right: 2em;
-}
-
-/* Place the image in the middle of its li container width a relative width */
-.hobbies-interests li img {
-  margin-right: auto;
-  margin-left: auto;
-  width: 85%;
-}
-
-/* For mobile devices we want to have these block items at the middle of the screen */
-.hobbies-interests ol {
-  display: table;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0
-}
-
-/*
-    These list element items will have a box style with shadow as if they were
-    some kind of product cards
- */
-.hobbies-interests li {
-  margin-top: 2em;
-  text-align: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .8);
-  max-width: 330px;
-  margin-bottom: 3em;
-  list-style: none;
-}
-
-/* For all the paragraphs inside these li elements we want a left text align and padding */
-.hobbies-interests li > p {
-  text-align: left;
-  padding: 5px 30px;
-}
-
-
-/*
-    Different styling for displays with a minimum width of 800 pixels, which means this is for
-    big tablets, laptops, desktop computers and every screen with more than the defined width
-*/
-@media (min-width: 800px) {
-  /*
-        For the hobbies cards we now display them as blocks of the same size that can be placed
-        next to each other floating left
-     */
-  .hobbies-interests li {
-    display: block;
-    float: left;
-    height: 600px;
-    margin-right: 3em;
-  }
-}
-
+<style>
+@import "@/styles/hobbyStyle.css";
 </style>

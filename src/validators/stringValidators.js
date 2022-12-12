@@ -51,7 +51,7 @@ export default {
 
     // Function for validating an array of names. If any of these names is invalid, it will directly return false and will
     // both alert the error message and render it on the DOM, otherwise it will return true
-    validateFieldsLengths: function (fieldsWithSizes) {
+    validateFieldLengths: function (fieldsWithSizes) {
         for (let fieldWithSize of fieldsWithSizes) {
             const {targetSize, fieldId, fieldName} = fieldWithSize;
             let targetValue = document.getElementById(fieldId).value;

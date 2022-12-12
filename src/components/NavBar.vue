@@ -11,6 +11,7 @@
 <script>
 
 export default {
+  // Component name and properties passed on
   name: "NavBar",
   props: {
     items: Array
@@ -18,75 +19,6 @@ export default {
 }
 </script>
 
-<style scoped lang="css">
-
-body {
-  margin: 20px 20px;
-}
-
-/* This section below is for vertical navigation header */
-nav {
-  background-color: forestgreen;
-  overflow: hidden;
-}
-
-/*
-    For each <li> tag inside <nav> we add a unique style for vertical display and borders
-*/
-nav a {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-style: solid;
-  border-color: black;
-  border-top: black;
-  border-left-style: none;
-  border-right-style: none;
-  text-decoration: none;
-  display: block;
-  color: white;
-  text-align: center;
-  font-size: 1.1em;
-}
-
-/* Class for painting different background color, for the active page in navbar */
-.router-link-exact-active {
-  background-color: yellowgreen;
-}
-
-/* Change the color of the text of the a tag inside .active to black */
-nav a.router-link-exact-active  {
-  color: black;
-}
-
-@media (min-width: 800px) {
-
-  nav {
-    padding: 20px 0;
-  }
-
-  /* The navigation bar here will be horizontal with other style */
-  nav a {
-    display: inline;
-    padding: 14px 16px;
-    border-bottom-style: none;
-    border-right-style: solid;
-    text-align: left;
-    width: fit-content;
-  }
-
-  nav a:first-child {
-    border-left-style: solid;
-  }
-
-  /* As these screens will likely be laptop and other devices with a mouse, we use hoover styling */
-  nav a:hover:not(.router-link-exact-active) {
-    background-color: #2fbd2f;
-  }
-
-  /*
-      These items in big screen sizes will have a left text align and a width where
-      content fits
-   */
-}
-
+<style scoped lang="scss">
+@import "@/styles/navBarStyle.scss";
 </style>

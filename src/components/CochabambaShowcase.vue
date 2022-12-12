@@ -1,10 +1,14 @@
 <template>
+  <!-- Section for the hometown summary -->
   <section class="hometown-summary">
+    <!-- Image for showing at the starting of this section -->
     <img src="https://drive.google.com/uc?export=view&id=11_hnW4eIz7Bo85LLmFflfxC68EpNMeHm"
          alt="An illustration of Cochabamba City viewed from the top of the Christ statue"
          class="front-img"
     />
+    <!-- Title of the hometown -->
     <h2>My hometown: Cochabamba</h2>
+    <!-- Hometown description -->
     <p>
       I currently reside in Cochabamba, Bolivia. Born and raised! I identify myself as Latino, and I am very happy
       with the heritage that involves, my country is not as popular as some other from the South America region.
@@ -17,12 +21,18 @@
       different kinds of local products and services, it is more known for the places to eat as this town is
       very rich of people that innovated with national dishes such as: Silpancho, Pique Macho, Chicharron, etc.
     </p>
+    <!-- Things for Cochabamba for a list loading the fetched items -->
     <h3>Things to do in Cochabamba</h3>
-    <ol>
+    <!-- If activities were loaded, show this list -->
+    <ol v-if="activitiesLoaded">
+      <!-- We use v-for for loading all items as we use each item's title and description -->
       <li v-for="thingToDo in thingsToDo" :key="thingToDo.title">
         {{ thingToDo.description }}
       </li>
     </ol>
+    <!-- If activities were not loaded yet, show this label -->
+    <p v-else>Loading things to do, please wait...</p>
+    <!-- Video with previous description -->
     <p>
       A video is given below for things to do in Bolivia by a tourist perspective:
     </p>
@@ -34,9 +44,11 @@
 
 <script>
 export default {
+  // Component name and properties passed on
   name: "CochabambaShowcase",
   props: {
     thingsToDo: Array,
+    activitiesLoaded: Boolean,
   }
 }
 </script>

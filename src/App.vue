@@ -1,4 +1,5 @@
 <template>
+  <!-- Navigation bar for all pages -->
     <NavBar :items="navItems"/>
   <router-view/>
 </template>
@@ -25,11 +26,6 @@ export default {
   color: #2c3e50;
   margin: 20px 20px;
   background-color: #b8f5e2;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
 }
 
 </style>
