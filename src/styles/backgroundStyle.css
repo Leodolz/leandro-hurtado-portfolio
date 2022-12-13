@@ -1,9 +1,10 @@
-
+/* Container for all background info will have padding  */
 .background {
     padding-bottom: 2em;
     padding-left: 2em;
 }
 
+/* The table should have specific kind of width, be centered and from a specific font family */
 table {
     font-family: "Century Gothic", CenturyGothic, sans-serif;
     border-collapse: collapse;
@@ -11,7 +12,7 @@ table {
     width: 95%;
 }
 
-
+/* Table row should have a specific background, borders and be as block. This is for mobile */
 tr {
     background-color: #f1fff1;
     border: 1px solid #000000;
@@ -72,10 +73,12 @@ td:last-child {
     border-bottom: 0;
 }
 
+/* For data entries that are multiline, we add a margin in the top for better readability on mobile devices */
 .multiline-data-entry {
     margin-top: 2em;
 }
 
+/* Resume link href element styling to make it look like a button */
 #resume-link a {
     border: #2c3e50 solid 1px;
     background: lightblue;
@@ -89,13 +92,14 @@ td:last-child {
     text-decoration: none;
 }
 
+/* Container of the href for resume should have padding for button-like appearance */
 #resume-link {
     padding-bottom: 20px;
 }
 
 
+/* Below we format tables for a behavior more appealing to laptops and computers */
 @media (min-width: 800px) {
-    /* Below we format tables for a behavior more appealing to laptops and computers */
 
     /* Every table row should be displayed as default instead of mobile-like */
     tr {

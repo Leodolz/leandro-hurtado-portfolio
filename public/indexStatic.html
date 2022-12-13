@@ -1,10 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Leandro</title>
+<head> <!-- The head of the webpage to describe some meta information -->
+    <meta charset="utf-8" /> <!-- The encoding used for this page, usually UTF-8 is used everywhere -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- HTML5 style of telling the browser how to control the page's dimensions and scaling -->
+
+    <title>Leandro Hurtado - Biography</title> <!-- Title for the page, usually presented on the tab title from the browser -->
+
+    <meta name="description" content="Leandro Hurtado Biography webpage" /> <!-- The meta description of the page -->
+    <meta name="robots" content="index,follow" /> <!-- Meta info for letting robots index this website with no restrictions -->
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="style/staticStyle.css" />
 </head>
-<body>
-<h1>Hi</h1>
+<body> <!-- The content of the website -->
+<header> <!-- I plan to repeat this header in all the pages as the navigation must be consistent -->
+    <nav id="top"> <!-- I use top as id for the footer button to work as planned -->
+        <ul>
+            <li class="active"><a href="index.html">About me</a></li>
+            <li><a href="./backgroundStatic.html">Background</a></li>
+            <li><a href="./personalInfoStatic.html">Personal Information</a></li>
+            <li><a href="./contactMeStatic.html">Contact Me</a></li>
+            <li><a href="./commentsStatic.html">Comments</a></li>
+            <li><a href="./imageGalleryStatic.html">Image Gallery</a></li>
+        </ul>
+    </nav>
+</header>
+<main> <!-- The section for the main content of the body -->
+    <section class="card-front"> <!-- Using this section as the main content of this page, to be stylized -->
+        <h1>Elmer Leandro Hurtado Dolz : Biography</h1> <!-- I put a class to this header for later styling -->
+        <img
+                class="front-img"
+                src="https://drive.google.com/uc?export=view&id=1ziYuEz9zSdGOIv6tUqTvP7JxKpfBnVLG"
+                alt="An illustration of Leandro, he has brown hair, wears glasses and a gray jacket"
+        /> <!-- I use this image style format for having the image stay on the left and text on its right, I use em instead of pixels because em is a relative measure and is more stable for different screens -->
+        <p> <!-- Paragraph with a summary about myself -->
+            I am a software developer residing in Bolivia who is currently studying an MS degree in Software Development
+            online at Boston University. My experience in developing applications for a diverse set of environments is
+            of 3 years having contributed in different companies in a diverse set of roles. I am always eager to learn
+            something new every day and to always interact with different people for having a broader mindset with
+            every interaction. I was able to grow in my career starting from being a mentee to being a mentor over time,
+            always trying to equip myself with the necessary tools and knowledge and to give back and share my learnings
+            to other people.
+        </p>
+        <p> <!-- Another paragraph summarizing about me -->
+            Since I got graduated from a BS in Electronics and Telecommunications, I noticed that my true passion is
+            within programming, because this is a field where uniqueness and imagination is a talent and I feel at
+            best when I am given the freedom on designing and implementing how to tackle an issue and deliver a
+            solution that adapts to the company's needs and adjusts to its mission. My passion has done nothing more
+            than growing in this field, making me curious in the different branches of software development and
+            programming in general can offer, such fields as frontend programming, backend programming, database design,
+            application deployment, data science, etc. I like to challenge myself into learning from each field and
+            branch for making me as skillful as possible for being able to reach a higher impact in wherever I decide
+            to contribute with my work.
+        </p>
+    </section>
+    <section class="social-media">
+        <h3><strong>Social Networks</strong></h3>
+        <article>
+            <a href="https://github.com/Leodolz">
+                <img src="https://drive.google.com/uc?export=view&id=1_jthRtz3pdRqfziNawGIdi6vAC60Cf1D"
+                     class="icon"
+                     alt="Github logo icon">
+                <p>Github</p>
+            </a>
+        </article> <!-- Self-contained github link info, may style it uniquely -->
+        <article>
+            <a href="https://www.linkedin.com/in/elmer-leandro-hurtado-dolz-044a48182/">
+                <img src="https://drive.google.com/uc?export=view&id=1g9qjlbWBMM-JwWralE6uu5bCGSrAEjvC"
+                     class="icon"
+                     alt="Linkedin logo icon">
+                <p>LinkedIn</p>
+            </a>
+        </article> <!-- Self-contained github link info, may style it uniquely -->
+    </section>
+</main>
+<footer>
+    <!-- Footer with link for going to the top of this page -->
+    <a id="top-link" href="#top">Go to the top ↑</a>
+    <p>Page last updated in 2022</p> <!-- This could be replaced with a dynamic showcase of the date -->
+</footer>
 </body>
+
 </html>

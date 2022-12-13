@@ -10,15 +10,15 @@
            class="small-icon"
            alt="Bolivia flag small icon. It is composed of the colors red, yellow and green">
       <!-- Telephone with link to call this number -->
-      <a href="tel:+59179783096">+59179783096</a>
+      <a class="clickable-link" href="tel:+59179783096">+59179783096</a>
     </article>
     <article>
       <!-- Email with link for directly emailing the shown one -->
-      <strong>Email: </strong><a href="mailto:leodolz14@gmail.com">leodolz14@gmail.com</a>
+      <strong>Email: </strong><a class="clickable-link" href="mailto:leodolz14@gmail.com">leodolz14@gmail.com</a>
     </article> <!-- Self-contained email info -->
     <article>
       <!-- Location link to google maps for the town indicated -->
-      <strong>Location: </strong><a href="https://goo.gl/maps/SKyfaSvgV2LhvcRS6">Cochabamba, Bolivia</a>
+      <strong>Location: </strong><a class="clickable-link" href="https://goo.gl/maps/SKyfaSvgV2LhvcRS6">Cochabamba, Bolivia</a>
     </article> <!-- Self-contained location info -->
   </section>
 </template>

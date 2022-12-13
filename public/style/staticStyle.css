@@ -1,0 +1,393 @@
+/*
+ * This Style sheet is using a mobile-first design approach. Which means that
+ * it is focused in a mobile display and we use @media for a different display which would
+ * be for responsive design for desktop and bigger screen sizes
+ */
+
+/* Body margin and color for nice presentation */
+body {
+    margin: 20px 20px;
+    background-color: #b8f5e2;
+}
+
+#padded-container {
+    padding: 10px 30px;
+}
+
+/* This section below is for vertical navigation header */
+nav {
+    background-color: forestgreen;
+    overflow: hidden;
+}
+
+/*
+    For all the unlisted tag we disable the list type and we put each item to cover
+    the entire width of the screen
+ */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/*
+    For each <li> tag inside <nav> we add a unique style for vertical display and borders
+*/
+nav li {
+    padding: 1.5% 2%;
+    border-style: solid;
+    border-color: black;
+    border-top: black;
+    border-left-style: none;
+    border-right-style: none;
+    font-weight: bold;
+}
+
+
+nav li a {
+    text-decoration: none;
+    display: block;
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-size: 1.1em;
+}
+
+/*
+    For the frame that loads to youtube, this will cover all the screen width and a relative height
+*/
+iframe {
+    width: 100%;
+    height: 15em;
+}
+
+/* Table and rows styling below */
+
+table {
+    font-family: "Century Gothic", CenturyGothic, sans-serif;
+    border-collapse: collapse;
+    margin-right: auto;
+    margin-left: auto;
+    width: 95%;
+}
+
+
+tr {
+    background-color: #f1fff1;
+    border: 1px solid #000000;
+    display: block;
+    margin-bottom: 1em;
+}
+
+/* For mobile we don't display thead, we will modify this when we add @media */
+thead {
+    display: none;
+}
+
+/* Relative width defined for images in a table cell */
+td img {
+    width: 10em;
+}
+
+/* Nice formatting for a column header */
+th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+/* Common formatting for both elements th and td */
+th, td {
+    border-style: none;
+    border-color: black;
+    padding: 1.125em 0.625em;
+    text-align: center;
+    display: table-cell;
+}
+
+/* Format for table cells values */
+td {
+    border-bottom-color: #ddd;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+}
+
+/*
+    Synthetic pre-content for every td column to show the data-label attribute
+    for every td element, this is for a nice format in mobile devices and have
+    an easier table-like visualization in smaller screens
+ */
+td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* For the last table data, we don't use border at the bottom */
+td:last-child {
+    border-bottom: 0;
+}
+
+/* Footer formatting */
+footer {
+    clear: both; /* Here I am setting that it should not be either at right or left of another item */
+    text-align: center;
+    font-size: small;
+    margin-top: 3em;
+}
+
+.contact-info strong {
+    font-style: oblique;
+}
+
+/* Relative width for mall icons */
+.small-icon {
+    width: 1em;
+}
+
+/* Relative width for normal icons to be clicked in mobile device */
+.icon {
+    width: 4em;
+    margin-right: 1em;
+}
+
+/* Social media class text align as we want its clickables to be centered */
+.social-media {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+/* Format for header in social media should be left */
+.social-media h3 {
+    text-align: left;
+}
+
+/*
+    For the article items inside a social media class component, its display should place
+    sibling items next to each other
+ */
+.social-media article {
+    display: inline-block;
+}
+
+/* In mobile devices we do not show the text, just clickable icons */
+.social-media p {
+    display: none;
+}
+
+/* In a mobile device, it is better to cover full screen width for card front image */
+.front-img {
+    width: 100%;
+}
+
+/* For paragraph items inside this class, we want a specific font family */
+.card-front p {
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+/* Class for painting different background color, for the active page in navbar */
+.active {
+    background-color: yellowgreen;
+}
+
+/* Change the color of the text of the a tag inside .active to black */
+.active a {
+    color: black;
+}
+
+/*
+   For all li elements children of .cards-gallery, we format this as well as
+   every element classified as multiline-data-entry have the same formatting style
+ */
+.cards-gallery li, .multiline-data-entry {
+    margin-top: 2em;
+}
+
+/* All images inside .cards-gallery children have this format */
+.cards-gallery img{
+    width: 15em;
+    height: 10em;
+    margin-right: 2em;
+}
+
+/* Place the image in the middle of its li container width a relative width */
+.cards-gallery li img {
+    margin-right: auto;
+    margin-left: auto;
+    width: 85%;
+}
+
+/* For mobile devices we want to have these block items at the middle of the screen */
+.cards-gallery ol {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0
+}
+
+/*
+    These list element items will have a box style with shadow as if they were
+    some kind of product cards
+ */
+.cards-gallery li {
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .8);
+    max-width: 330px;
+    margin-bottom: 3em;
+    list-style: none;
+}
+
+/* For all the paragraphs inside these li elements we want a left text align and padding */
+.cards-gallery li > p {
+    text-align: left;
+    padding: 5px 30px;
+}
+
+/*
+    Format for elements with id of top-link
+*/
+#top-link {
+    text-decoration: none;
+    padding: 10px;
+    font-family: sans-serif;
+    color: #fff;
+    background: #000;
+    border-radius: 100px;
+    position: sticky;
+}
+
+/*
+    Different styling for displays with a minimum width of 800 pixels, which means this is for
+    big tablets, laptops, desktop computers and every screen with more than the defined width
+*/
+@media (min-width: 800px) {
+
+    /* The navigation bar here will be horizontal with other style */
+    nav li {
+        float: left;
+        display: inline;
+        padding: 14px 16px;
+        border-bottom-style: none;
+        border-right-style: solid;
+    }
+
+    /* As these screens will likely be laptop and other devices with a mouse, we use hoover styling */
+    nav li:hover:not(.active) {
+        background-color: #2fbd2f;
+    }
+
+    /*
+        These items in big screen sizes will have a left text align and a width where
+        content fits
+     */
+    nav li a {
+        text-align: left;
+        width: fit-content;
+    }
+
+    /* For big screens, we align footer to the left instead of the center */
+    footer {
+        text-align: left;
+    }
+
+    /* Top link size will be different for big screens */
+    #top-link {
+        width: 8em;
+    }
+
+    /* The card front image should have a relative size and be at the left of some text */
+    .card-front img {
+        width: 12em;
+        float: left;
+        margin-right: 2em;
+        margin-bottom: 1em;
+    }
+
+    /* The hometown summary will have a relative size with a relatively wide image */
+    .hometown-summary img {
+        width: 20em;
+    }
+
+    /* The iframe will have a defined size for bigger screens */
+    iframe {
+        width: 560px;
+        height: 315px;
+    }
+
+    /* Below we format tables for a behavior more appealing to laptops and computers */
+
+    /* Every table row should be displayed as default instead of mobile-like */
+    tr {
+        display: table-row;
+        margin-bottom: 0;
+    }
+
+    /* We now display table headers for this type of @media */
+    thead {
+        display: table-header-group;
+    }
+
+    /* We now use a border style for all th and td elements */
+    th, td {
+        border-style: solid;
+    }
+
+    /* For these kinds of data entry we don't put  */
+    .multiline-data-entry {
+        margin-top: 0;
+    }
+
+    /* For table columns we format different colors and sizes */
+    td {
+        border-bottom-color: #000;
+        display: table-cell;
+        font-size: medium;
+        text-align: center;
+    }
+
+    /*
+        As we are now visualizing as a normal table, we do not display the data-label attribute
+        for each column, as our table is more conventional for this @media
+     */
+    td::before {
+        display: none;
+    }
+
+    /*
+        For the hobbies cards we now display them as blocks of the same size that can be placed
+        next to each other floating left
+     */
+    .cards-gallery li {
+        display: block;
+        float: left;
+        height: 600px;
+        margin-right: 3em;
+    }
+
+    /* Relative width for normal icons */
+    .icon {
+        width: 1.5em;
+        margin-right: 0;
+    }
+
+    /* Social media class text should be left for this kind of media display */
+    .social-media {
+        text-align: initial;
+        margin-bottom: 2em;
+    }
+    /* Now we place article elements as default */
+    .social-media article {
+        display: table;
+        margin-bottom: 0.5em;
+    }
+
+    /* For this media we do show the text on the social media links */
+    .social-media p {
+        display: initial;
+    }
+}

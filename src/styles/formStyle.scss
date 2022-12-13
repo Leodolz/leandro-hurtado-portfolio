@@ -1,8 +1,11 @@
+/* Headers in this scope should be of a specific font size and margin at bottom */
 h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
+/* All form input/select elements should be flex and have a specific kind of dimensions as well as each of them
+ be on a single separate line */
 input, textarea, select {
   display: flex;
   background-color: #eee;
@@ -14,14 +17,17 @@ input, textarea, select {
   font-size: 0.8rem;
 }
 
+/* Inputs and text areas should have a border-box sizing */
 input, textarea {
   box-sizing: border-box;
 }
 
+/* When focusing any of these inputs, an outline will be shown from teal color */
 input:focus, textarea:focus {
   outline: 1px solid teal;
 }
 
+/* Specific styling to button */
 button {
   display: flex;
   margin: 0 auto;
@@ -38,15 +44,18 @@ button {
   cursor: pointer;
 }
 
+/* Hovering opacity change on button for more appealing experience */
 button:hover {
   opacity: 0.7;
 }
 
+/* All paragraphs inside a form should be aligned left */
 form p {
   text-align: left;
   justify-content: left;
 }
 
+/* The text area height is fixed in this scope */
 textarea {
   height: 100px;
 }
@@ -75,11 +84,13 @@ textarea {
   margin: 0 0;
 }
 
+/* For all elements that are of the required-label class, a red asterisk will be appended to its content */
 .required-label::after {
   content: "*";
   color: red;
 }
 
+/* Styling for the submit success elements to look like a special green label box */
 .submit-success {
   padding: 10px 5px;
   border: #2fbd2f solid;

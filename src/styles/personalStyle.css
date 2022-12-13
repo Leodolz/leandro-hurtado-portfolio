@@ -3,6 +3,7 @@
     width: 100%;
 }
 
+/* The about container should have some padding and margins */
 .about {
     margin: 2em 2em;
     padding-bottom: 2em;

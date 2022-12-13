@@ -25,7 +25,8 @@ export default {
         {
             title: 'Plaza 4 de Noviembre',
             image: require('@/assets/plaza-4-de-noviembre-after.jpeg'),
-            imageAlt: '',
+            imageAlt: 'Image of a plaza at night with a circular fountain with different lights of colors. It shows ' +
+                'it is surrounded by a rotary road',
             content: "This plaza has been renewed and now had better fountains and contains better security to ensure " +
                 "a safe walk for people nearby at all hours.\nThis place is usually more crowded on the evenings.",
             earlierImage: require('@/assets/plaza-4-de-noviembre-before.jpeg'),
@@ -70,7 +71,7 @@ export default {
             title: 'Alalay Lake',
             image: 'https://www.pub.eldiario.net/noticias/2016/2016_04/nt160429/f_2016-04-29_17.jpg',
             imageAlt: 'An image of how the Alalay lake located in Cochabamba looks now, it shows a picture of a ' +
-                'lae surrounded by city and houses',
+                'lake surrounded by city and houses',
             content: "This lake is a place with a nice view and is surrounded by both a walkway and a bike way " +
                 "as it has a big radius, many people use it for doing exercise while having a good view.\nOn its " +
                 "surroundings there is a construction covering a big area that is used for hosting the annual fair " +

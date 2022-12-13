@@ -12,29 +12,32 @@
     max-width: 1200px;
 }
 
+/* Form container flex display style with a max width */
 .form-container {
     display: flex;
     max-width: 768px;
 }
 
-
+/* Left section's paragraph should have left align */
 .left-section p {
     margin: 1em 2em;
     text-align: left;
 }
 
-
+/* Right and left section used as boxes */
 .right-section, .left-section {
     box-sizing: border-box;
     margin: 0;
 }
 
+/* Right section should have 100% width of its container */
 .right-section {
     width: 100%;
     padding: 1em;
     background-color: white;
 }
 
+/* Left section of contact form should have aligned text that is centered and with different background */
 .left-section {
     text-align: center;
     justify-content: center;
@@ -42,16 +45,21 @@
     background-color: teal;
 }
 
+/* All forms in this scope should have a 100% width */
 form {
     width: 100%;
 }
 
+/* Styling for mobile devices below */
 @media (max-width: 600px) {
+    /* Form container should NOT be flex and have a max width */
     .form-container {
         display: initial;
         max-width: 768px;
     }
 
+    /* Left section should have a different flex direction and a small margin as in a mobile, it will show
+     as this section above the right section instead of being one next to other */
     .left-section{
         flex-direction: column;
         display: flow-root;

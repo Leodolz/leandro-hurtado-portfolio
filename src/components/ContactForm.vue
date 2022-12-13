@@ -1,10 +1,4 @@
 <template class="contact-container">
-  <noscript>
-    This section uses Javascript for filling, validating and uploading a contact form. Please enable Javascript
-    for being able to have the intended experience for this webpage. Else, feel free to reach out externally. My
-    contact info is shown below:
-    <ContactInfo />
-  </noscript>
   <!-- When shown in desktops and laptops, this section should occupy the middle-left part of the screen -->
   <section class="left-section">
     <!-- Section title and some sentences as description -->

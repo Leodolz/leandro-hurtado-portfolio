@@ -1,23 +1,26 @@
-
 /* Relative width for mall icons */
 .small-icon {
   width: 1em;
 }
 
+/* Every article element should be left and have a small margin for contact info */
 article {
   margin-bottom: 1em;
   float: left;
 }
 
-a:active, a:hover {
-  color: green;
+/* When hovering in links, they should look lightly different */
+.clickable-link:active, .clickable-link:hover, .clickable-link:focus {
+  color: lightblue;
 }
 
+/* Any link should look white from type a */
 a:link {
   color: white;
   text-decoration: none;
 }
 
+/* The contact info container should have centered text with some padding */
 .contact-info {
   padding-bottom: 1em;
   display: flex;
@@ -27,6 +30,7 @@ a:link {
   margin-right: auto;
 }
 
+/* Any bold text from contact info should have this font style */
 .contact-info strong {
   font-style: oblique;
 }
